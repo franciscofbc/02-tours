@@ -1,13 +1,7 @@
 import { useState } from 'react';
 
-const Tour = ({ id, name, info, image, price }) => {
-  const [flagInfo, setFlagInfo] = useState(false);
-
-  const infoReduce = (info) => {
-    if (info.length > 199) {
-      return `${info.slice(0, 199)} ... `;
-    }
-  };
+const Tour = ({ id, name, info, image, price, removeTour }) => {
+  const [readMore, setReadMore] = useState(false);
 
   return (
     <article className="tour">
@@ -15,30 +9,31 @@ const Tour = ({ id, name, info, image, price }) => {
       <span className="span-tour ">${price}</span>
       <div className="div-tour">
         <h4>{name}</h4>
-        {flagInfo ? (
+        {readMore ? (
           <>
             <p className="info">{info}</p>
             <button
-              type="button"
               className="btn btn-tour-read"
-              onClick={() => setFlagInfo(false)}
+              onClick={() => setReadMore(false)}
             >
               show less
             </button>
           </>
         ) : (
           <>
-            <p className="info">{infoReduce(info)}</p>
+            <p className="info">{`${info.slice(0, 199)} ... `}</p>
             <button
-              type="button"
               className="btn btn-tour-read"
-              onClick={() => setFlagInfo(true)}
+              onClick={() => setReadMore(true)}
             >
               read more
             </button>
           </>
         )}
-        <button type="button" className="btn  btn-block btn-tour">
+        <button
+          className="btn  btn-block btn-tour"
+          onClick={() => removeTour(id)}
+        >
           not interested
         </button>
       </div>
