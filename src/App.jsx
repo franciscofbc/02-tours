@@ -22,11 +22,11 @@ const App = () => {
 
       // setTimeout(() => {
       setTours(data);
-      setIsLoading(false);
       // }, 3000);
     } catch (error) {
       console.log(error);
     }
+    setIsLoading(false);
   };
 
   useEffect(() => {
