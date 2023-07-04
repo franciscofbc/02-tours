@@ -318,9 +318,13 @@ body {
   letter-spacing: var(--letterSpacing);
 }
 .div-tour {
+  background-color: var(--white);
+  border-radius: var(--borderRadius);
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow-4);
 }
 .div-tour h4 {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 .info {
   display: inline;
@@ -329,11 +333,13 @@ body {
 .btn-tour-read {
   background: var(--white);
   color: var(--primary-500);
+  box-shadow: none;
   padding: 0;
 }
 .btn-tour-read:hover {
   background: var(--white);
   color: var(--primary-500);
+  box-shadow: none;
 }
 
 .btn-tour {
