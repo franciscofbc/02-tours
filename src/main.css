@@ -59,6 +59,7 @@ html {
   --transition: 0.3s ease-in-out all;
   --max-width: 1120px;
   --fixed-width: 600px;
+  --fluid-width: 90vw;
 
   /* box shadow*/
   --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -274,12 +275,14 @@ ul {
 /* ===================== rest of the code ===================== */
 
 body {
-  width: var(--max-width);
-  max-width: 100%;
+  /* width: var(--max-width);
+  max-width: 90%; */
+  width: var(--fluid-width);
+  max-width: var(--max-width);
   margin: 6rem auto;
 
   @media (max-width: 1024px) {
-    max-width: 90%;
+    /* max-width: 90%; */
   }
 }
 
@@ -304,7 +307,8 @@ body {
 
 .tour .img-tour {
   height: 20rem;
-  border-radius: var(--borderRadius);
+  border-top-left-radius: var(--borderRadius);
+  border-top-right-radius: var(--borderRadius);
 }
 
 .tour .span-tour {
@@ -313,15 +317,21 @@ body {
   right: 0;
   background-color: var(--primary-500);
   padding: 0.25rem 0.5rem;
-  border-radius: var(--borderRadius);
+  border-top-right-radius: var(--borderRadius);
   color: var(--white);
   letter-spacing: var(--letterSpacing);
 }
 .div-tour {
   background-color: var(--white);
-  border-radius: var(--borderRadius);
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
   padding: 2rem 1.5rem;
-  box-shadow: var(--shadow-4);
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
+}
+
+.div-tour:hover {
+  box-shadow: var(--shadow-3);
 }
 .div-tour h4 {
   /* margin-top: 2rem; */
